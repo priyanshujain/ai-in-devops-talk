@@ -1,0 +1,28 @@
+graph LR
+    subgraph Data Sources
+        A[Alerts] --> D
+        AA[Traces] --> D
+        B[Logs] --> D
+        C[Metrics] --> D
+        E[Databases] --> D
+        F[Deployments] --> D
+        U[VMs & Infrastructure] --> D
+    end
+
+    D(Collected Data) --> CoreAI
+
+    subgraph CoreAI [AI Core]
+        T[Tools like kubectl, runbooks, and queries]
+        H[LLM Engine]
+
+        T -- Provides Capabilities --> H
+        H -- Utilizes & Interacts --> T
+    end
+
+    CoreAI --> G[Agent]
+    G --> I[Infra Chatbot]
+    G --> J[Compliance Reports]
+    G --> K[Security Assessment]
+    G --> L[Cost Analysis]
+    G --> M[Performance Actionables]
+    G --> P[Automated Remediation]
