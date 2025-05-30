@@ -1,0 +1,13 @@
+graph LR
+    
+
+  subgraph Agent
+        A[LLM]
+        B[Memory]
+        C[Question]
+        
+        A --> B
+        B --> A
+
+        C--> A
+    end

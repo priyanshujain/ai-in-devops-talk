@@ -1,0 +1,7 @@
+graph LR
+  A["Terraform(IaC)<br> Pull Request"] --> B[Agent]
+  C[Cloud Pricing<br/>Data] --> B
+  B --> D[Cost insights<br>for the changes<br>within PR]
+  
+  F[AWS] --> C
+  G[GCP] --> C

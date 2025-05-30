@@ -1,0 +1,32 @@
+---
+config:
+  theme: neo
+---
+flowchart LR
+    A["⚠️ Intermittent<br>Login Failures"] --> B{"DB connectivity<br>issue?"}
+    B L_B_C_0@-- Yes --> C{"Connection pool<br>issues?"}
+    B -- No --> D["Check auth<br>service"]
+    C L_C_E_0@-- Yes --> E{"Max connections<br>reached?"}
+    C -- No --> F["Check DNS/<br>network"]
+    E L_E_G_0@-- Yes --> G["📊 Query time<br>5X higher"]
+    E -- No --> H["Check connection<br>timeouts"]
+    G L_G_I_0@--> I["✅ DIAGNOSIS<br>Insufficient DB<br>connections"]
+
+     A:::Rose
+     B:::Sky
+     C:::Sky
+     D:::Ash
+     E:::Sky
+     F:::Ash
+     G:::Sky
+     H:::Ash
+     I:::Sky
+    classDef Rose stroke-width:1px, stroke-dasharray:none, stroke:#FF5978, fill:#FFDFE5, color:#8E2236
+    classDef Sky stroke-width:1px, stroke-dasharray:none, stroke:#374D7C, fill:#E2EBFF, color:#374D7C
+    classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
+    linkStyle 1 stroke:#000000,fill:none
+
+    L_B_C_0@{ animation: fast } 
+    L_C_E_0@{ animation: fast } 
+    L_E_G_0@{ animation: fast } 
+    L_G_I_0@{ animation: fast } 

@@ -1,0 +1,26 @@
+graph LR
+    subgraph CoreAI [AI Agent]
+        T[Tools like kubectl, runbooks, and queries]
+        H[LLM Engine]
+        S[Memory]
+
+        T -- Provides Capabilities --> H
+        H -- Utilizes & Interacts --> T
+        H -- Store leanings --> S
+        S -- Retrive learnings --> H
+    end
+
+    subgraph Infrastructure
+        A[Systems]
+        B[Applications]
+        C[People]
+        
+        A --> B
+        B --> A
+
+        C--> A
+    end
+
+    CoreAI -- Resolution --> Infrastructure
+    Infrastructure -- Query/Issue --> CoreAI
+    

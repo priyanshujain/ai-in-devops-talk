@@ -1,0 +1,18 @@
+flowchart LR
+  %% Problem Input
+  A[🚨 Cloud Infrastructure<br/>Problem<br/>• Service down<br/>• Performance issue<br/>• Config error] --> B[🧠 Analyze &<br/>Plan Fix]
+  
+  %% Core Loop
+  B --> C[🛠️ Execute Actions<br/>• kubectl commands<br/>• Code analysis<br/>• Create GitHub PR]
+  C --> D[🔍 Validate<br/>Results]
+  D -->|Fixed| E[✅ Problem<br/>Resolved]
+  D -->|Need more work| B
+  
+  %% Knowledge Sources
+  F[📚 Knowledge <br/>Neo4j Graph<br/>• Services topology<br/>• Dependencies<br/>• Config relationships] -.->|Understand context| B
+  
+  G[🧠 Past Solutions<br/>Memory Bank<br/>• Similar issues<br/>• What worked<br/>• Root causes] -.->|Learn from history| B
+  
+  %% Learning Updates
+  C -.->|Update topology| F
+  D -.->|Store solution pattern| G

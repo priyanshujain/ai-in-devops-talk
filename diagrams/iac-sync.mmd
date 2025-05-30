@@ -1,0 +1,25 @@
+---
+config:
+  theme: neo
+---
+flowchart LR
+    A1["Knowledge Graph<br>Database"]
+    
+
+    C1[Resource Importer]
+    A1 --> S1
+
+    subgraph S1[Sync Engine]
+    B1["AI Agent"]
+    C1["Resource Importer<br>(like terraform import)"]
+    D1[Cloud APIs]
+
+    B1 --> C1
+    C1 --> B1
+
+    B1 --> D1
+    D1 --> B1
+    end
+
+    E1["Infrastructure as Code<br>(IaC)"]
+    S1 --> E1

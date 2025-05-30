@@ -1,0 +1,21 @@
+---
+config:
+  theme: neo
+---
+flowchart LR    
+    D1["Source Code<br>(Github)"]
+
+    D1 --> E1[LLM Agent]
+    D2[CI Logs] --> E1
+    D3[Container Registry] --> E1
+    D4[Secret Manager] --> E1
+    D5[K8S Cluster] --> E1
+    D6[APM and<br> Logging] --> E1
+    subgraph Reasoning in a loop
+    E1
+    end
+
+    E1 --> F1[Rollback Automation]
+    E1 --> F2[Deployment<br>Monitoring]
+    E1 --> F3[Testing<br>Recommendations]
+    E1 --> F4[Alerts]
